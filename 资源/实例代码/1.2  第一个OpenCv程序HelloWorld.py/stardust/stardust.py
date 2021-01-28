@@ -6,7 +6,7 @@
 #copyright Copyright (C) 2018, Stardust Studio, All Rights Reserved
 #license   http://www.apache.org/licenses/LICENSE-2.0
 
-#从cv2库创建cv实例
+#导入cv2模块，定义别名为cv
 import cv2 as cv
 
 #加载图片
