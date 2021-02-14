@@ -1,10 +1,10 @@
 #file      stardust.py
-#author    凡尘(Kevin Brooks)
-#version   1.0
-#date      2020_08_22
+#author    Joseph Howse, Learning OpenCV 3 Computer Vision with Python - Second Edition
+#version   
+#date      2020_09_11
 #github    https://github.com/stardust-scitech/OpenCM
-#copyright Copyright (C) 2018, Stardust Studio, All Rights Reserved
-#license   http://www.apache.org/licenses/LICENSE-2.0
+#copyright 
+#license   
 
 #导入基本功能cv2库
 import cv2

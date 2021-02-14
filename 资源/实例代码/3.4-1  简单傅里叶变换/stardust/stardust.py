@@ -1,10 +1,10 @@
 #file      stardust.py
-#author    凡尘(Kevin Brooks)
-#version   1.0
-#date      2020_09_12
+#author    http://www.opencv.org.cn/opencvdoc/2.3.2/html/doc/tutorials/tutorials.html
+#version   
+#date      2020_09_11
 #github    https://github.com/stardust-scitech/OpenCM
-#copyright Copyright (C) 2018, Stardust Studio, All Rights Reserved
-#license   http://www.apache.org/licenses/LICENSE-2.0
+#copyright 
+#license   
 
 #导入cv2模块，定义别名为cv
 import cv2 as cv
