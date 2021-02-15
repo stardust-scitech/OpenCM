@@ -7,8 +7,9 @@
 <p align="right">
 凡尘 2020/07/18 于上海
 </p>
-## 目  录
-## OpenCV  上篇
+<p align="center">
+目  录
+OpenCV  上篇
 
 第一章  安装OpenCV最新工程环境
 1.1  在Windows上安装Visual Studio + OpenCV + Python
@@ -110,3 +111,4 @@
 9.3  基于ANN的手写数字识别
 9.4  本章小结
 9.5  思考与练习
+</p>
