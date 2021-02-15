@@ -11,8 +11,8 @@
 目  录
 OpenCV  上篇
 
-第一章  安装OpenCV最新工程环境
-1.1  在Windows上安装Visual Studio + OpenCV + Python
+- 第一章  安装OpenCV最新工程环境
+-- 1.1  在Windows上安装Visual Studio + OpenCV + Python
 1.2  第一个OpenCV程序HelloWorld.py
 1.3  CMake构建C++底层开发环境
 1.4  OpenCV社区资源
