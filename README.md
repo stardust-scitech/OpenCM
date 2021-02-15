@@ -115,13 +115,13 @@
 ## OpenMV  下篇
 ### 应用篇
 
-- 第一章  OpenMv IDE搭建
+- 第一章  OpenMV IDE搭建
 	* 1.1  基本开发环境配置
 	* 1.2  第一个OpenMV程序HelloWorld.py
 	* 1.3  OpenMV社区资源
 	* 1.4  本章小结
 
-- 第二章  OpenMv基本操作
+- 第二章  OpenMV基本操作
 	* 2.1  OpenMV IDE的使用
 	* 2.2  构建多文件工程
 	* 2.3  多单片机控制及通信
@@ -156,8 +156,8 @@
 
 ### 底层篇
 
-- 第五章  OpenMv4硬件组成
-	* 5.1  stm32H7部分
+- 第五章  OpenMV4硬件组成
+	* 5.1  STM32H7部分
 	* 5.2  ov7725部分
 	* 5.3  本章小结
 
