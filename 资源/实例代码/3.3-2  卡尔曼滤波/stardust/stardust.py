@@ -10,8 +10,6 @@
 import cv2 as cv
 #导入数学运算库，定义别名为np
 import numpy as np
-#导入绘图模块，定义别名为plt
-import matplotlib.pyplot as plt
  
 #创建画板
 frame = np.zeros((800,800,3),np.uint8)
