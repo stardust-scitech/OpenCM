@@ -1,7 +1,7 @@
 #file      stardust.py
-#author    http://www.opencv.org.cn/opencvdoc/2.3.2/html/doc/tutorials/tutorials.html
+#author    OpenCV, https://docs.opencv.org/4.5.0/de/dbc/tutorial_py_fourier_transform.html
 #version   
-#date      2020_09_11
+#date      2020_09_12
 #github    https://github.com/stardust-scitech/OpenCM
 #copyright 
 #license   
