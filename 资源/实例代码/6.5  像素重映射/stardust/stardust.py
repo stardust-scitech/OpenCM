@@ -13,15 +13,31 @@ import numpy as np
 
 #加载图片
 img = cv.imread("HelloWorld.png")
-
+#获取图片信息
+info = img.shape
+#获取图片纵向长度
+height = info[0]
+#获取图片横向长度
+width = info[1]
+#获取图片通道数
+mode = info[2]
+#创建空的图像容器
 mapx = np.zeros(img.shape[:2], dtype=np.float32)
+#创建空的图像容器
 mapy = np.zeros(img.shape[:2], dtype=np.float32)
 
-rows, cons = img.shape[:2]
-for i in range(rows):
-    for j in range(cons):
+#创建映射关系
+for i in range(height):
+    for j in range(width):
         mapx.itemset((i, j), j)
-        mapy.itemset((i, j), i)
-rst = cv.remap(img, mapy, mapx, cv.INTER_LINEAR)  # mapy表示的是图片高的坐标
-cv.imshow('rst', rst)
-cv.waitKey()
+        mapy.itemset((i, j), height-i)
+
+#像素重映射
+container = cv.remap(img, mapx, mapy, cv.INTER_LINEAR) 
+
+#显示原图
+cv.imshow("Original image", img)
+#显示映射后的图像
+cv.imshow("Remap image", container)
+#等待按下任意按键继续运行下一条语句
+cv.waitKey(0)

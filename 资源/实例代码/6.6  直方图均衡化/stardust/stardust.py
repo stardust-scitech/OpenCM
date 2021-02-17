@@ -11,12 +11,17 @@ import cv2 as cv
 #导入数学运算库，定义别名为np
 import numpy as np
  
-img = cv.imread('cat.jpg')
+#加载图片
+img = cv.imread("cat.jpg")
+#BGR转YUV格式
 img_yuv = cv.cvtColor(img, cv.COLOR_BGR2YUV)
+#直方图均衡化
 img_yuv[:,:,0] = cv.equalizeHist(img_yuv[:,:,0])
-img_output = cv.cvtColor(img_yuv, cv.COLOR_YUV2BGR)
- 
-cv.imshow('Color input image', img)
-cv.imshow('Histogram equalized', img_output)
- 
+#YUV转BGR格式
+container = cv.cvtColor(img_yuv, cv.COLOR_YUV2BGR)
+#显示原图
+cv.imshow("Original image", img)
+#显示直方图均衡化后的图像
+cv.imshow("Histogram equalized", container)
+#等待按下任意按键继续运行下一条语句
 cv.waitKey(0)

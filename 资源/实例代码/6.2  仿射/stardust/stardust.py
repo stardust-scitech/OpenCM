@@ -11,18 +11,28 @@ import cv2 as cv
 #导入数学运算库，定义别名为np
 import numpy as np
 
-img = cv.imread('I Love You.png', 1)
-cv.imshow('original', img)
-imgInfo = img.shape
-height= imgInfo[0]
-width = imgInfo[1]
-deep = imgInfo[2]
-# src 3 -> dst 3 (左上角, 左下角,右上角)
-matSrc = np.float32([[0,0],[0,height-1],[width-1, 0]])
-# 需要注意的是 行列 和 坐标 是不一致的
-matDst = np.float32([[50,50],[100, height-50],[width-200,100]])
+#加载图片
+img = cv.imread("I Love You.png")
+#获取图片信息
+info = img.shape
+#获取图片纵向长度
+height = info[0]
+#获取图片横向长度
+width = info[1]
+#获取图片通道数
+mode = info[2]
 
-matAffine = cv.getAffineTransform(matSrc,matDst) #mat 1 src 2 dst 形成组合矩阵
-dst = cv.warpAffine(img, matAffine,(height, width))
-cv.imshow('affine',dst)
+#创建原图3点(左上, 左下和右上)的坐标
+matSrc = np.float32([[0,0],[0,height],[width, 0]])
+#创建目标图像的3点坐标
+matDst = np.float32([[0,0],[100, height-100],[width-100,100]])
+#合并矩阵
+matAffine = cv.getAffineTransform(matSrc,matDst) 
+#进行仿射变换
+container = cv.warpAffine(img, matAffine,(height, width))
+#显示原图
+cv.imshow("Original image", img)
+#显示显示旋转后的图像
+cv.imshow("Affine image", container)
+#等待按下任意按键继续运行下一条语句
 cv.waitKey(0)

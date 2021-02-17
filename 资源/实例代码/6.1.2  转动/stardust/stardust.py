@@ -9,17 +9,28 @@
 #导入cv2模块，定义别名为cv
 import cv2 as cv
 
-img = cv.imread('I Love You.png', 1)
-cv.imshow('original', img)
-imgInfo = img.shape
-height= imgInfo[0]
-width = imgInfo[1]
-deep = imgInfo[2]
+#定义旋转角度
+z_rotate = 60
 
-# 定义一个旋转矩阵
-matRotate = cv.getRotationMatrix2D((height*0.5, width*0.5), 30, 0.7) # mat rotate 1 center 2 angle 3 缩放系数
+#加载图片
+img = cv.imread("I Love You.png")
+#获取图片信息
+info = img.shape
+#获取图片纵向长度
+height = info[0]
+#获取图片横向长度
+width = info[1]
+#获取图片通道数
+mode = info[2]
 
-dst = cv.warpAffine(img, matRotate, (height, width))
+#定义一个旋转矩阵
+matRotate = cv.getRotationMatrix2D((height*0.5, width*0.5), z_rotate, 0.7)
+#进行仿射变换，一个维度变换的结果为产生旋转效果
+container = cv.warpAffine(img, matRotate, (height, width))
 
-cv.imshow('rotate',dst)
+#显示原图
+cv.imshow("Original image", img)
+#显示显示旋转后的图像
+cv.imshow("Rotate image", container)
+#等待按下任意按键继续运行下一条语句
 cv.waitKey(0)

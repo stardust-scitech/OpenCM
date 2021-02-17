@@ -11,18 +11,29 @@ import cv2 as cv
 #导入数学运算库，定义别名为np
 import numpy as np
 
-img = cv.imread("I Love You.png", 1)
-imgInfo = img.shape
-height = imgInfo[0]
-width = imgInfo[1]
-mode = imgInfo[2]
+#定义x方向平移量
+x_translation = 200
 
-dst = np.zeros(imgInfo, np.uint8)
+#加载图片
+img = cv.imread("I Love You.png")
+#获取图片信息
+info = img.shape
+#获取图片纵向长度
+height = info[0]
+#获取图片横向长度
+width = info[1]
+#获取图片通道数
+mode = info[2]
+#创建空的图像容器
+container = np.zeros(info, np.uint8)
 
 for i in range( height ):
-    for j in range( width - 100 ):
-        dst[i, j + 100] = img[i, j]
+    for j in range( width - x_translation ):
+        container[i, j + x_translation] = img[i, j]
 
-cv.imshow('original', img)
-cv.imshow('translation', dst)
+#显示原图
+cv.imshow("Original image", img)
+#显示平移后的图像
+cv.imshow("Translation image", container)
+#等待按下任意按键继续运行下一条语句
 cv.waitKey(0)

@@ -11,21 +11,34 @@ import cv2 as cv
 #导入数学运算库，定义别名为np
 import numpy as np
 
+#加载图片
 img = cv.imread("I Love You.png")
-cv.imshow('original', img)
-imgInfo = img.shape
-height= imgInfo[0]
-width = imgInfo[1]
-deep = imgInfo[2]
+#获取图片信息
+info = img.shape
+#获取图片纵向长度
+height = info[0]
+#获取图片横向长度
+width = info[1]
+#获取图片通道数
+mode = info[2]
+#创建空的图像容器
+container = np.zeros(info, np.uint8)
 
-dst = np.zeros([height*2, width, deep], np.uint8)
+#镜像图像并用分割线标记
+for i in range(int(height*0.5)):
+    for j in range(width):
+        container[i,j] = img[i,j]
+        container[height-i-1,j] = img[i,j]
+        #对纵向长度对应像素值奇偶判断
+        if height%2 == 0:
+            container[int(height/2)-1,j] = (0, 0, 255)
+            container[int(height/2),j] = (0, 0, 255)
+        else:
+            container[(height-1)/2,j] = (0, 0, 255)
 
-for i in range( height ):
-    for j in range( width ):
-        dst[i,j] = img[i,j]
-        dst[height*2-i-1,j] = img[i,j]
-
-for i in range(width):
-    dst[height, i] = (0, 0, 255)
-cv.imshow('image', dst)
+#显示原图
+cv.imshow("Original image", img)
+#显示显示镜像后的图像
+cv.imshow("Mirror image", container)
+#等待按下任意按键继续运行下一条语句
 cv.waitKey(0)
