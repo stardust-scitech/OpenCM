@@ -6,14 +6,10 @@
 #copyright Copyright (C) 2018, Stardust Studio, All Rights Reserved
 #license   http://www.apache.org/licenses/LICENSE-2.0
 
-import os
-import cv2
-import sys
+#导入cv2模块，定义别名为cv
+import cv2 as cv
+#导入数学运算库，定义别名为np
 import numpy as np
 
-filename = "lab"  
-
-img = cv2.imread("lab.png")
-print(filename.replace(".png",".jpg"))
-newfilename = filename.replace(".png",".jpg")
-cv2.imwrite("new.jpg",img)
+#读取图片并覆写
+cv.imwrite("lab.jpg", cv.imread("lab.png"))

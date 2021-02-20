@@ -1,14 +1,13 @@
 #file      stardust.py
-#author    凡尘(Kevin Brooks)
-#version   1.0
+#author    取不到名字的Z先生, https://blog.csdn.net/qq_42233962/article/details/105482765
+#version   
 #date      2020_08_07
 #github    https://github.com/stardust-scitech/OpenCM
-#copyright Copyright (C) 2018, Stardust Studio, All Rights Reserved
-#license   http://www.apache.org/licenses/LICENSE-2.0
+#copyright 
+#license   
 
+#从Python的PIL库中导入Image模块
 from PIL import Image
-#利用python的PIL模块处理图像
-#from Huffman import *
  
 class node: #节点的类
     #定义节点构造方法
@@ -146,5 +145,7 @@ def Decoding(width,height,coding_table,coding_result):
     decode_image.save('decode.bmp') 
     print("译码已经完成：图片存储为decode.bmp")
 
+#彩色图转灰度
 picture = picture_convert('lab.jpg','new.jpg')
+#灰度图进行哈夫曼编码
 Huffman_Coding(picture)
